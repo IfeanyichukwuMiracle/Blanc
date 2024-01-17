@@ -1,0 +1,56 @@
+section.form {
+  padding: 0.9rem;
+  width: 100%;
+}
+section.form form {
+  width: 30%;
+  min-width: 24rem;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  margin: 5rem auto;
+}
+section.form form div {
+  width: 100%;
+}
+section.form form div input {
+  background: #cccccc18;
+  width: 100%;
+  padding: 0.4rem;
+  box-sizing: border-box;
+  border-radius: 0.3rem;
+  border: none;
+  margin: 0.2rem auto 0.4rem auto;
+  font-size: 0.93rem;
+}
+section.form form div button {
+  margin-top: 0.9rem;
+  width: 100%;
+  padding: 0.4rem;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+div.google {
+  width: 100%;
+  background: rgb(66, 66, 255);
+  text-align: center;
+  color: white;
+  font-weight: 600;
+  margin-top: 1.8rem;
+  border-radius: 0.3rem;
+  padding: 0.4rem 0 0.55rem 0;
+  cursor: pointer;
+  cursor: pointer;
+}
+
+@media (max-width: 420px) {
+  section.form {
+    width: 100%;
+    margin: auto;
+  }
+  section.form form {
+    min-width: 22rem;
+  }
+}

@@ -1,0 +1,65 @@
+section.admin-modal-container {
+  width: 100%;
+  height: 100vh;
+  background: rgba(49, 49, 49, 0.829);
+  position: fixed;
+  top: 0;
+  z-index: 11;
+}
+div.admin-modal {
+  background: white;
+  padding: 0.4rem;
+  width: 50%;
+  min-width: 35rem;
+  margin: 4rem auto;
+  border-radius: 0.3rem;
+  position: relative;
+}
+div.admin-modal-content {
+  width: 89%;
+  margin: 1.9rem auto;
+}
+div.admin-modal-content form {
+  margin-top: 1.4rem;
+}
+div.admin-modal-content form div {
+  width: 100%;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+div.admin-modal-content form div textarea,
+div.admin-modal-content form div input {
+  width: 100%;
+  border-radius: 0.3rem;
+  border: none;
+  background: #f8f8f8;
+  padding: 0.4rem;
+  font-size: 1rem;
+}
+
+header {
+  padding: 0.7rem 0.9rem;
+  border-bottom: 2px solid #f8f8f8;
+}
+
+section.added-products-section {
+  padding: 0.9rem;
+  /* background: red; */
+}
+main.added-products-container {
+  /* background: yellow; */
+  margin-top: 1.5rem;
+}
+div.added-products-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+}
+
+@media (max-width: 600px) {
+  div.admin-modal {
+    width: 90%;
+    min-width: 95%;
+    margin: 4rem auto;
+  }
+}

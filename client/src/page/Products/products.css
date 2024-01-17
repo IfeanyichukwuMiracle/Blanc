@@ -1,0 +1,51 @@
+main.all-products-container {
+  padding: 0.9rem;
+}
+p.all-p-title {
+  font-weight: 800;
+  font-size: 1.2rem;
+  margin: 1.8rem 0;
+}
+div.all-products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3.2rem;
+}
+
+form.search input {
+  width: 20rem;
+  padding: 0.3rem;
+  font-size: 0.9rem;
+  border-radius: 0.3rem;
+  background: #f8f8f8;
+  border: none;
+  margin-right: 0.5rem;
+}
+form.search button {
+  padding: 0.3rem;
+  border: none;
+  font-weight: 600;
+}
+
+@media (max-width: 550px) {
+  form.search {
+    /* background: red; */
+    display: flex;
+    align-items: center;
+  }
+  form.search input {
+    flex: 5;
+    padding: 0.5rem;
+  }
+  form.search button {
+    flex: 1;
+    font-weight: 700;
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 900px) {
+  div.all-products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -1,0 +1,104 @@
+main.hero-section {
+  padding: 2.9rem 0.9rem;
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+}
+div.hero-text {
+  flex: 3;
+}
+div.hero-image {
+  flex: 2;
+  /* background: red; */
+  /* overflow: hidden; */
+  position: relative;
+  cursor: pointer;
+}
+div.hero-image img {
+  border-radius: 0.3rem;
+  width: 100%;
+}
+div.hero-image div.discount-card {
+  color: white;
+  font-weight: 600;
+  background: red;
+  position: absolute;
+  top: -0.5rem;
+  left: -0.5rem;
+  padding: 0.4rem 0.5rem;
+  border-top-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+div.hero-image div.hero-product-name {
+  background: white;
+  position: absolute;
+  bottom: 0.5rem;
+  font-weight: 600;
+  /* display: none; */
+  visibility: hidden;
+  left: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+  box-shadow: 2px 7px 10px -7px rgba(0, 0, 0, 0.45);
+  -webkit-box-shadow: 2px 7px 10px -7px rgba(0, 0, 0, 0.45);
+  -moz-box-shadow: 2px 7px 10px -7px rgba(0, 0, 0, 0.45);
+  transition: all 0.2s ease-in-out;
+}
+div.hero-image:hover div.hero-product-name {
+  /* display: block; */
+  visibility: visible;
+}
+
+p.hero-title {
+  font-weight: 800;
+  font-size: 2.5rem;
+  color: var(--black);
+  letter-spacing: -0.12rem;
+  line-height: 2.8rem;
+}
+p.hero-subtitle {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin: 0.5rem 0 0.7rem 0;
+  color: rgb(133, 133, 133);
+}
+p.hero-body {
+  line-height: 1.7rem;
+}
+
+/* Product Categories */
+main.product-categories {
+  padding: 0.4rem 0.9rem;
+}
+div.products {
+  margin-top: 2.2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  gap: 2rem;
+}
+div.more-products {
+  background: var(--black);
+  color: white;
+  width: max-content;
+  padding: 0.4rem 0.3rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  margin: 1.3rem auto;
+}
+
+@media (max-width: 500px) {
+  p.hero-title {
+    font-size: 2.3rem;
+  }
+}
+
+@media (max-width: 900px) {
+  main.hero-section {
+    flex-direction: column;
+  }
+  div.products {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+  }
+}

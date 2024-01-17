@@ -1,0 +1,133 @@
+section.flash-sale-banner {
+  color: white;
+  background: var(--black);
+  padding: 0.3rem;
+  box-sizing: border-box;
+  text-align: center;
+}
+section.flash-sale-banner a {
+  color: white;
+  text-decoration: underline;
+}
+header.main-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0.9rem;
+  border-bottom: 2px solid #f8f8f8;
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 10;
+}
+header.main-banner ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+header.main-banner ul li {
+  cursor: pointer;
+}
+
+p.logo {
+  font-weight: 700;
+  font-size: 1.78rem;
+}
+div.menu {
+  display: none;
+  cursor: pointer;
+}
+#cart {
+  position: relative;
+}
+.cart-count {
+  position: absolute;
+  top: -0.6rem;
+  right: -0.5rem;
+  background: black;
+  color: white;
+  padding: 0.1rem 0.35rem 0.1rem 0.35rem;
+  font-size: 0.8rem;
+  border-radius: 15rem;
+}
+.mobile-cart {
+  display: none;
+}
+
+@media (max-width: 500px) {
+  div.menu {
+    display: block;
+  }
+  header.main-banner ul {
+    display: none;
+  }
+  .mobile-cart {
+    display: block;
+  }
+}
+
+section.menu-items {
+  background: white;
+  height: 90vh;
+  padding: 7rem 0.9rem;
+  border-bottom: 2px solid #f8f8f8;
+}
+section.menu-items div {
+  font-weight: 800;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+}
+
+section.logout-modal-container {
+  width: 100%;
+  height: 100vh;
+  background: rgba(49, 49, 49, 0.829);
+  position: fixed;
+  top: 0;
+  z-index: 11;
+}
+div.logout-modal {
+  width: 50%;
+  min-width: 35rem;
+  padding: 0.3rem;
+  position: relative;
+  border-radius: 0.3rem;
+  background: white;
+  margin: 3rem auto;
+  box-shadow: -1px -1px 12px -8px rgba(0, 0, 0, 0.45);
+  -webkit-box-shadow: -1px -1px 12px -8px rgba(0, 0, 0, 0.45);
+  -moz-box-shadow: -1px -1px 12px -8px rgba(0, 0, 0, 0.45);
+}
+div.logout-modal-content {
+  width: 80%;
+  /* background: yellow; */
+  margin: 3rem auto;
+}
+p.modal-title {
+  font-weight: 800;
+  font-size: 2.2rem;
+}
+div.modal-links {
+  margin-top: 1.5rem;
+  /* background: green; */
+  display: flex;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 600px) {
+  div.logout-modal {
+    width: 100%;
+    min-width: 100%;
+    margin: 0;
+    height: 100vh;
+  }
+  p.modal-title {
+    font-weight: 800;
+    font-size: 1.9rem;
+  }
+}

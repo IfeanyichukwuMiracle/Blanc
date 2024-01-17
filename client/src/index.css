@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
+:root {
+  --text-font: "Lato", sans-serif;
+  --black: rgb(17, 17, 17);
+}
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: var(--text-font);
+}
+.btn {
+  background: var(--black);
+  color: white;
+  border: none;
+  border-radius: 0.2rem;
+  cursor: pointer;
+}
+.cta-btn {
+  padding: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+}
+.dashboard-btn {
+  background: rgb(69, 69, 255);
+  color: white;
+  font-weight: 800;
+  font-size: 0.9rem;
+  transition: all 0.3s ease-in-out;
+  padding: 0.3rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+.dashboard-btn:hover {
+  background: rgb(25, 25, 255);
+}
+.paystack-button {
+  color: white;
+  background: red;
+  padding: 0.4rem;
+  font-weight: 800;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 0.3rem;
+  margin: 0.5rem 0;
+  cursor: pointer;
+}
