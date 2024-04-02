@@ -6,7 +6,7 @@ import "./home.css";
 import { Link } from "react-router-dom";
 
 const Home = () => {
-  const { products } = UseProducts(`http://localhost:5003/products`);
+  const { products } = UseProducts(`https://nile2-0.onrender.com/products`);
   return (
     <>
       <Header />

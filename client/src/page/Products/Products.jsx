@@ -33,7 +33,7 @@ const Products = () => {
   };
 
   useEffect(() => {
-    fetchProducts(`http://localhost:5003/products`);
+    fetchProducts(`https://nile2-0.onrender.com/products`);
   }, []);
   return (
     <>

@@ -38,7 +38,7 @@ passport.use(
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: "http://localhost:5003/users/google/nile",
+      callbackURL: "https://nile2-0.onrender.com/users/google/nile",
     },
     async function (accessToken, refreshToken, profile, cb) {
       const user = await User.findOne({ googleId: profile.id });

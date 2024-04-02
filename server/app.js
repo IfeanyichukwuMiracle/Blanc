@@ -15,7 +15,7 @@ start();
 // Middleware
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://nile-clothes.netlify.app",
     credentials: true,
     methods: "GET,POST,PUT,DELETE",
   }),
@@ -61,9 +61,9 @@ app.get("/login/success", (req, res) => {
 // Google passport auth success redirect
 app.get("/google-login/success", (req, res) => {
   if (req.isAuthenticated()) {
-    return res.redirect(`http://localhost:5173`);
+    return res.redirect(`https://nile-clothes.netlify.app`);
   }
-  return res.redirect(`http://localhost:5173/login`);
+  return res.redirect(`https://nile-clothes.netlify.app/login`);
 });
 
 // Check auth status --- Maybe removed! Looks weird!

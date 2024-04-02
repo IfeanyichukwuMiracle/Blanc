@@ -33,7 +33,7 @@ const Login = () => {
       setIsLoading(true);
       try {
         const response = await axios.post(
-          `http://localhost:5003/users/login`,
+          `https://nile2-0.onrender.com/users/login`,
           {
             ...user,
           },
@@ -67,7 +67,7 @@ const Login = () => {
   };
 
   const google = () => {
-    window.open(`http://localhost:5003/users/google`, `_self`);
+    window.open(`https://nile2-0.onrender.com/users/google`, `_self`);
   };
   return (
     <>

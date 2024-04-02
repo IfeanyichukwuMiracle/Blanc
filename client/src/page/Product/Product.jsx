@@ -19,16 +19,16 @@ const Product = () => {
   const [isPosting, setIsPosting] = useState(false);
   const { setCartItems } = useContext(AppContext);
   const { comments } = UseComments(
-    `http://localhost:5003/comments/${productId}`,
+    `https://nile2-0.onrender.com/comments/${productId}`,
   );
   const findProduct = async function () {
     try {
       const res = await axios.get(
-        `http://localhost:5003/products/${productId}`,
+        `https://nile2-0.onrender.com/products/${productId}`,
         { withCredentials: true },
       );
       setProduct(res.data.product);
-      const res2 = await axios.get(`http://localhost:5003/products`, {
+      const res2 = await axios.get(`https://nile2-0.onrender.com/products`, {
         withCredentials: true,
       });
       setProducts(res2.data);
@@ -156,7 +156,7 @@ const Product = () => {
                   try {
                     setIsPosting(true);
                     const res = await axios.post(
-                      `http://localhost:5003/comments/${productId}`,
+                      `https://nile2-0.onrender.com/comments/${productId}`,
                       { body: comment },
                       { withCredentials: true },
                     );

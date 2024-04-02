@@ -35,7 +35,7 @@ const Register = () => {
     ) {
       try {
         const newUser = await axios.post(
-          `http://localhost:5003/users/register`,
+          `https://nile2-0.onrender.com/users/register`,
           { ...user },
         );
         notify(newUser.data.msg);
@@ -55,7 +55,7 @@ const Register = () => {
   };
 
   const google = () => {
-    window.open(`http://localhost:5003/users/google`, `_self`);
+    window.open(`https://nile2-0.onrender.com/users/google`, `_self`);
   };
   return (
     <>

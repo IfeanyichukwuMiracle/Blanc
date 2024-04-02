@@ -11,7 +11,7 @@ import { UseProducts } from "../../data";
 const Admin = () => {
   const [isModal, setIsModal] = useState(false);
   const [isFetching, setIsFetching] = useState(false);
-  const { products } = UseProducts(`http://localhost:5003/products`);
+  const { products } = UseProducts(`https://nile2-0.onrender.com/products`);
   const [details, setDetails] = useState({
     productName: "",
     productPrice: "",
@@ -31,7 +31,7 @@ const Admin = () => {
       setIsFetching(true);
       const formData = new FormData(e.target);
       const response = await axios.post(
-        `http://localhost:5003/products/add/${
+        `https://nile2-0.onrender.com/products/add/${
           JSON.parse(localStorage.getItem("user"))._id
         }`,
         formData,

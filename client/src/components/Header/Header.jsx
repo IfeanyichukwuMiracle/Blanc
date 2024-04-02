@@ -67,7 +67,7 @@ const Header = () => {
                     setIsModal(true);
                   } else {
                     const res = await axios.get(
-                      "http://localhost:5003/users/logout",
+                      "https://nile2-0.onrender.com/users/logout",
                       {
                         withCredentials: true,
                       },
@@ -193,7 +193,7 @@ const Header = () => {
                   style={{ padding: ".4rem .5rem", fontWeight: "600" }}
                   onClick={async () => {
                     const res = await axios.get(
-                      "http://localhost:5003/users/logout",
+                      "https://nile2-0.onrender.com/users/logout",
                       {
                         withCredentials: true,
                       },
