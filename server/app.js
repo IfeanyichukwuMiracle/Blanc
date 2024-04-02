@@ -48,12 +48,12 @@ app.get("/login/failed", (req, res) => {
     .json({ msg: "Check entered details and try again!", route: "/login" });
 });
 app.get("/login/success", (req, res) => {
-  if (req.isAuthenticated()) {
-    const { password, ...rest } = req.user;
-    return res
-      .status(200)
-      .json({ msg: "Login Successful!", route: "/", user: { ...rest } });
-  }
+  // if (req.isAuthenticated()) {
+  const { password, ...rest } = req.user;
+  return res
+    .status(200)
+    .json({ msg: "Login Successful!", route: "/", user: { ...rest } });
+  // }
   return res.status(200).json({
     msg: "Login Failed! try again!",
     route: "/login",
