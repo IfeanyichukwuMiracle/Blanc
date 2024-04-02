@@ -50,6 +50,7 @@ router.post("/register", async (req, res) => {
 //
 // User Login! using passport-local
 router.post("/login", (req, res, next) => {
+  console.log("Active");
   passport.authenticate("local", {
     failureRedirect: "/login/failed",
     successRedirect: "/login/success",
