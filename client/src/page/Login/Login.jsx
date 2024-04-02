@@ -58,6 +58,33 @@ const Login = () => {
           navigate(response.data.route);
         }, 3000);
       } catch (error) {
+       const response = await axios.post(
+         `https://nile2-0.onrender.com/users/login`,
+         {
+           ...user,
+         },
+         { withCredentials: true },
+       );
+       notify(response.data.msg);
+       setIsLoading(false);
+       localStorage.setItem("user", JSON.stringify(response.data.user));
+       if (response.data.user.isAdmin) {
+         localStorage.setItem(
+           "isAdmin",
+           JSON.stringify(response.data.user.isAdmin),
+         );
+       } else {
+         localStorage.setItem("isAdmin", "");
+       }
+       if (!localStorage.getItem("products"))
+         localStorage.setItem("products", JSON.stringify([]));
+       setIsAdmin(Boolean(localStorage.getItem("")));
+       setUser({ username: "", password: "" });
+       setTimeout(() => {
+         navigate(response.data.route);
+       }, 3000);
+        // 
+        // 
         notify("Login Error! try again!");
         setIsLoading(false);
         setUser({ username: "", password: "" });
