@@ -8,6 +8,7 @@ const CommentRoute = require("./routes/comments");
 const ProductRoute = require("./routes/products");
 const passport = require("passport");
 const session = require("express-session");
+const MemoryStore = require("memorystore")(session);
 const port = process.env.PORT || 5003;
 start();
 
@@ -23,6 +24,9 @@ app.use(
 app.use(
   session({
     secret: process.env.SECRET,
+    store: new MemoryStore({
+      checkPeriod: 86400000, // prune expired entries every 24h
+    }),
     resave: false,
     saveUninitialized: false,
   }),
