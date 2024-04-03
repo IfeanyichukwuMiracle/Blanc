@@ -8,35 +8,18 @@ require("dotenv").config();
 //
 //
 // Local passport strategy configuration
-// passport.use(
-//   new LocalStrategy(async (username, password, cb) => {
-//     const user =
-//       (await User.findOne({ username })) ||
-//       (await User.findOne({ email: username }));
-
-//     if (!user) return cb(null, false);
-
-//     bcrypt.compare(password, user.password, (err, isPwd) => {
-//       if (err) return cb(null, false);
-//       if (isPwd) return cb(null, user);
-//       return cb(null, false);
-//     });
-//   }),
-// );
 passport.use(
-  new LocalStrategy(function (username, password, done) {
-    User.findOne({ username: username }, function (error, user) {
-      if (error) {
-        return done(err);
-      }
-      if (!user) {
-        return done(null, false);
-      }
-      bcrypt.compare(password, user.password, (err, isPwd) => {
-        if (err) return cb(null, false);
-        if (isPwd) return cb(null, user);
-        return cb(null, false);
-      });
+  new LocalStrategy(async (username, password, cb) => {
+    const user =
+      (await User.findOne({ username })) ||
+      (await User.findOne({ email: username }));
+
+    if (!user) return cb(null, false);
+
+    bcrypt.compare(password, user.password, (err, isPwd) => {
+      if (err) return cb(null, false);
+      if (isPwd) return cb(null, user);
+      return cb(null, false);
     });
   }),
 );

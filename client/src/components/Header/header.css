@@ -72,6 +72,9 @@ section.menu-items {
   height: 90vh;
   padding: 7rem 0.9rem;
   border-bottom: 2px solid #f8f8f8;
+  position: fixed;
+  top: 3.5rem;
+  width: 100%;
 }
 section.menu-items div {
   font-weight: 800;

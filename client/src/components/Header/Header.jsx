@@ -139,13 +139,45 @@ const Header = () => {
               All Products
             </Link>
           </div>
-          <div>
+          {/* <div>
             <Link to={`/login`} style={{ color: "var(--black)" }}>
               Login
             </Link>
           </div>
-          <div>Help</div>
-          <div>Logout</div>
+          <div>Help</div> */}
+          <div>
+            {localStorage.getItem("user") ? (
+              <p
+                onClick={async () => {
+                  if (
+                    localStorage.getItem("products") &&
+                    JSON.parse(localStorage.getItem("products")).length > 0
+                  ) {
+                    setIsModal(true);
+                  } else {
+                    const res = await axios.get(
+                      "https://nile2-0.onrender.com/users/logout",
+                      {
+                        withCredentials: true,
+                      },
+                    );
+                    notify(res.data.msg);
+                    localStorage.removeItem("user");
+                    localStorage.removeItem("isAdmin");
+                    setTimeout(() => {
+                      navigate("/login");
+                    }, 3000);
+                  }
+                }}
+              >
+                Logout
+              </p>
+            ) : (
+              <Link to={`/login`} style={{ color: "var(--black)" }}>
+                Sign up / Login
+              </Link>
+            )}
+          </div>
         </section>
       )}
 
