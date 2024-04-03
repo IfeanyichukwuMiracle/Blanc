@@ -75,6 +75,7 @@ section.menu-items {
   position: fixed;
   top: 3.5rem;
   width: 100%;
+  z-index: 10001;
 }
 section.menu-items div {
   font-weight: 800;
