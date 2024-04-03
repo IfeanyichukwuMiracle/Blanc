@@ -43,14 +43,6 @@ app.use("/products", ProductRoute);
 //
 // Local passport authentication redirect
 app.get("/login/failed", (req, res) => {
-  // Added this if statement to check the user is authenticated
-  if (req.isAuthenticated()) {
-    const { password, ...rest } = req.user;
-    return res
-      .status(200)
-      .json({ msg: "Login Successful!", route: "/", user: { ...rest } });
-  }
-
   // original code
   return res
     .status(400)
@@ -58,11 +50,11 @@ app.get("/login/failed", (req, res) => {
 });
 app.get("/login/success", (req, res) => {
   if (req.isAuthenticated()) {
-    const { password, ...rest } = req.user;
-    return res
-      .status(200)
-      .json({ msg: "Login Successful!", route: "/", user: { ...rest } });
   }
+  const { password, ...rest } = req.user;
+  return res
+    .status(200)
+    .json({ msg: "Login Successful!", route: "/", user: { ...rest } });
   return res.status(200).json({
     msg: "Login Failed! try again!",
     route: "/login",
