@@ -1,19 +1,19 @@
 // import useContext below
-import { useState } from "react";
+import { useState, useContext } from "react";
 // import useNavigate below
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./login.css";
-// import axios from "axios";
-// import { style } from "../../loading";
-// import { AppContext } from "../../App";
+import axios from "axios";
+import { style } from "../../loading";
+import { AppContext } from "../../App";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
-  // const navigate = useNavigate();
-  // const { setIsAdmin } = useContext(AppContext);
-  // const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
+  const { setIsAdmin } = useContext(AppContext);
+  const [isLoading, setIsLoading] = useState(false);
   const [user, setUser] = useState({
     username: "",
     password: "",
@@ -33,45 +33,45 @@ const Login = () => {
     notify(
       `Our team is currently working on this functionality to ensure your security. Try signing in with google`,
     );
-    // const { username, password } = user;
-    // if (username && password) {
-    //   setIsLoading(true);
-    //   try {
-    //     const response = await axios.post(
-    //       `https://nile2-0.onrender.com/users/login`,
-    //       {
-    //         ...user,
-    //       },
-    //       { withCredentials: true },
-    //     );
-    //     notify(response.data.msg);
-    //     setIsLoading(false);
-    //     console.log(response.data);
-    //     localStorage.setItem("user", JSON.stringify(response.data.user));
-    //     if (response.data.user.isAdmin) {
-    //       localStorage.setItem(
-    //         "isAdmin",
-    //         JSON.stringify(response.data.user.isAdmin),
-    //       );
-    //     } else {
-    //       localStorage.setItem("isAdmin", "");
-    //     }
-    //     if (!localStorage.getItem("products"))
-    //       localStorage.setItem("products", JSON.stringify([]));
-    //     setIsAdmin(Boolean(localStorage.getItem("")));
-    //     setUser({ username: "", password: "" });
-    //     setTimeout(() => {
-    //       navigate(response.data.route);
-    //     }, 3000);
-    //     return;
-    //   } catch (error) {
-    //     notify("Login Error!\nTry again!");
-    //     console.log(error);
-    //     setIsLoading(false);
-    //     setUser({ username: "", password: "" });
-    //     return;
-    //   }
-    // }
+    const { username, password } = user;
+    if (username && password) {
+      setIsLoading(true);
+      try {
+        const response = await axios.post(
+          `https://nile2-0.onrender.com/users/login`,
+          {
+            ...user,
+          },
+          { withCredentials: true },
+        );
+        notify(response.data.msg);
+        setIsLoading(false);
+        console.log(response.data);
+        localStorage.setItem("user", JSON.stringify(response.data.user));
+        if (response.data.user.isAdmin) {
+          localStorage.setItem(
+            "isAdmin",
+            JSON.stringify(response.data.user.isAdmin),
+          );
+        } else {
+          localStorage.setItem("isAdmin", "");
+        }
+        if (!localStorage.getItem("products"))
+          localStorage.setItem("products", JSON.stringify([]));
+        setIsAdmin(Boolean(localStorage.getItem("")));
+        setUser({ username: "", password: "" });
+        setTimeout(() => {
+          navigate(response.data.route);
+        }, 3000);
+        return;
+      } catch (error) {
+        notify("Login Error!\nTry again!");
+        console.log(error);
+        setIsLoading(false);
+        setUser({ username: "", password: "" });
+        return;
+      }
+    }
   };
 
   const google = () => {
@@ -125,7 +125,7 @@ const Login = () => {
             <button
               type="submit"
               className="btn"
-              // style={isLoading ? style : {}}
+              style={isLoading ? style : {}}
               onClick={onFormSubmit}
             >
               Login
