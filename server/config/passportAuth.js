@@ -23,11 +23,17 @@ passport.use(
     });
   }),
 );
-passport.serializeUser((user, cb) => {
-  cb(null, user);
+// passport.serializeUser((user, cb) => {
+//   cb(null, user);
+// });
+// passport.deserializeUser((user, cb) => {
+//   cb(null, user);
+// });
+passport.serializeUser(function (user, done) {
+  return done(null, user._id);
 });
-passport.deserializeUser((user, cb) => {
-  cb(null, user);
+passport.deserializeUser(function (id, done) {
+  return done(null, getUserById(id));
 });
 
 //
