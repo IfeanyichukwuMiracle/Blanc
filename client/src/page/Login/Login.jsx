@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./login.css";
 // import axios from "axios";
-import { style } from "../../loading";
+// import { style } from "../../loading";
 // import { AppContext } from "../../App";
 
 import { ToastContainer, toast } from "react-toastify";
@@ -125,7 +125,7 @@ const Login = () => {
             <button
               type="submit"
               className="btn"
-              style={isLoading ? style : {}}
+              // style={isLoading ? style : {}}
               onClick={onFormSubmit}
             >
               Login
