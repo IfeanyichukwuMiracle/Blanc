@@ -50,10 +50,10 @@ app.get("/login/failed", (req, res) => {
 });
 app.get("/login/success", (req, res) => {
   if (req.isAuthenticated()) {
-    // const { password, ...rest } = req.user;
+    const { password, ...rest } = req.user;
     return res
       .status(200)
-      .json({ msg: "Login Successful!", route: "/", user: req.user });
+      .json({ msg: "Login Successful!", route: "/", user: rest });
   }
   return res.status(200).json({
     msg: "Login Failed! try again!",
