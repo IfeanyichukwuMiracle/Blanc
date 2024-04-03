@@ -83,7 +83,13 @@ const Cart = () => {
                 </p>
               </div>
 
-              <PaystackButton {...componentProps} />
+              {localStorage.getItem("user") ? (
+                <PaystackButton {...componentProps} />
+              ) : (
+                <Link to={`/login`}>
+                  <button>Pay now</button>
+                </Link>
+              )}
             </div>
           ) : (
             ``
