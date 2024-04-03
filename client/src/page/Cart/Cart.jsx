@@ -17,10 +17,12 @@ const Cart = () => {
   };
 
   const componentProps = {
-    email: JSON.parse(localStorage.getItem("user"))?.email || "",
+    email:
+      JSON.parse(localStorage.getItem("user"))?.email ||
+      "ifeanyimiraclechuks@gmail.com",
     amount: getTotal() * 100,
     metadata: {
-      name: JSON.parse(localStorage.getItem("user"))?.username || "",
+      name: JSON.parse(localStorage.getItem("user"))?.username || "miracle",
       phone: "",
     },
     publicKey: "pk_live_770b736c57f13522c75b39d729da2d7bc769fc9b",
