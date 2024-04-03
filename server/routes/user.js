@@ -56,13 +56,23 @@ router.post("/register", async (req, res) => {
 //     successRedirect: "/login/success",
 //   })(req, res, next);
 // });
-router.post(
-  "/login",
-  passport.authenticate("local", { failureRedirect: "/login/failed" }),
-  function (req, res) {
-    res.redirect("/login/success");
-  },
-);
+// router.post(
+//   "/login",
+//   passport.authenticate("local", { failureRedirect: "/login/failed" }),
+//   function (req, res) {
+//     res.redirect("/login/success");
+//   },
+// );
+router.post("/login", (req, res, next) => {
+  passport.authenticate("local")(req, res, function () {
+    if (!req.user) {
+      console.log("User not found!");
+    } else {
+      res.redirect("/login/success");
+      console.log("signed in");
+    }
+  });
+});
 
 //
 //
