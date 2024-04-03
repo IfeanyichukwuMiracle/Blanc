@@ -73,9 +73,9 @@ section.menu-items {
   padding: 7rem 0.9rem;
   border-bottom: 2px solid #f8f8f8;
   position: fixed;
-  top: 3.5rem;
+  top: 3.3rem;
   width: 100%;
-  z-index: 10001;
+  z-index: 1000111111;
 }
 section.menu-items div {
   font-weight: 800;

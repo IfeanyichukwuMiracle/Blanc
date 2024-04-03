@@ -41,6 +41,7 @@ const Login = () => {
         );
         notify(response.data.msg);
         setIsLoading(false);
+        console.log(response.data);
         localStorage.setItem("user", JSON.stringify(response.data.user));
         if (response.data.user.isAdmin) {
           localStorage.setItem(
@@ -57,8 +58,10 @@ const Login = () => {
         setTimeout(() => {
           navigate(response.data.route);
         }, 3000);
+        return;
       } catch (error) {
-        notify("Login Error! try again!");
+        notify("Login Error!\nTry again!");
+        console.log(error);
         setIsLoading(false);
         setUser({ username: "", password: "" });
         return;
