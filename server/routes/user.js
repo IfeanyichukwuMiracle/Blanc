@@ -68,8 +68,10 @@ router.post("/login", (req, res, next) => {
     if (!req.user) {
       console.log("User not found!");
     } else {
-      res.redirect("/login/success");
-      console.log("signed in");
+      req.session.save(() => {
+        res.redirect("/login/success");
+        console.log("signed in");
+      });
     }
   });
 });
