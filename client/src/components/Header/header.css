@@ -69,13 +69,14 @@ div.menu {
 
 section.menu-items {
   background: white;
-  height: 90vh;
+  height: 85vh;
   padding: 7rem 0.9rem;
   border-bottom: 2px solid #f8f8f8;
   position: fixed;
-  top: 3.3rem;
+  top: 4.5rem;
   width: 100%;
   z-index: 1000111111;
+  border-radius: 0.3rem;
 }
 section.menu-items div {
   font-weight: 800;
